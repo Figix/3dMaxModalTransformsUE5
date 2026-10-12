@@ -1,0 +1,39 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0-mvp",
+  "FriendlyName": "3ds Max Editor Controls",
+  "Description": "Keyboard-first W/E/R modal transforms for the Unreal Editor viewport.",
+  "Category": "Editor",
+  "CreatedBy": "Figix",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "CanContainContent": true,
+  "IsBetaVersion": true,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "ThreeDMaxEditorControlsPlugin",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64"
+      ]
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "ControlRig",
+      "Enabled": true,
+      "Optional": true
+    },
+    {
+      "Name": "RigVM",
+      "Enabled": true,
+      "Optional": true
+    }
+  ]
+}
