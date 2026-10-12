@@ -1,7 +1,7 @@
 {
   "FileVersion": 3,
-  "Version": 1,
-  "VersionName": "0.1.0-mvp",
+  "Version": 2,
+  "VersionName": "0.1.1-mvp",
   "FriendlyName": "3ds Max Editor Controls",
   "Description": "Keyboard-first W/E/R modal transforms for the Unreal Editor viewport.",
   "Category": "Editor",

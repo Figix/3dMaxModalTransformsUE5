@@ -153,6 +153,14 @@ namespace ThreeDMaxControls
 
 	bool FInputProcessor::ShouldHandleHotkeys(FSlateApplication& SlateApp) const
 	{
+		// Preserve Unreal's right-mouse viewport navigation. When RMB was pressed
+		// before a transform hotkey, let W/E/R and the other keys reach the
+		// viewport camera controls instead of starting a modal transform.
+		if (SlateApp.GetPressedMouseButtons().Contains(EKeys::RightMouseButton))
+		{
+			return false;
+		}
+
 		if (SlateApp.AnyMenusVisible())
 		{
 			return false;

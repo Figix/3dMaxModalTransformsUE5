@@ -27,7 +27,7 @@ namespace ThreeDMaxControls
 		explicit FInputProcessor(const TSharedPtr<FUICommandList>& InCommandList);
 		~FInputProcessor() = default;
 
-		/** Registers the hotkey bindings (G, R, S, etc.) to their respective functions. */
+		/** Registers the hotkey bindings (W, E, R, etc.) to their respective functions. */
 		void BindCommands();
 
 		//~ IInputProcessor Interface

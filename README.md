@@ -51,7 +51,7 @@ This repository contains source code rather than checked-in build products. A Wi
 - **Precision and snapping** — hold `Shift` for fine adjustment and `Ctrl` to invert the current viewport snapping state.
 - **Multi-context architecture** — includes adapters for Level Editor actors, Blueprint SCS components, and Control Rig elements.
 - **Undo/Redo** — each modal session uses Unreal's transaction system; cancellation restores the initial state.
-- **Input safety** — transform hotkeys are intercepted only over an editor viewport, not in text fields, menus, or PIE.
+- **Input safety** — transform hotkeys are intercepted only over an editor viewport, not in text fields, menus, PIE, or while the right mouse button is already held for camera navigation.
 
 The current Phase 1 acceptance target is the single-Actor Level Editor workflow. Multi-selection, Blueprint component, and Control Rig support are present in the inherited implementation but should be treated as expanding test coverage rather than the completed Phase 1 guarantee.
 
@@ -75,6 +75,12 @@ The current Phase 1 acceptance target is the single-Actor Level Editor workflow.
 | Cancel | Right Click or `Esc` | Restore the initial transform and cancel the transaction. |
 | Precision Mode | Hold `Shift` | Reduce mouse influence for fine adjustments. |
 | Toggle Snapping | Hold `Ctrl` | Temporarily invert viewport snapping. |
+
+### Viewport camera priority
+
+Hold the **Right Mouse Button first**, then press `W`, `E`, or another viewport navigation key. The plugin passes those keys through so Unreal's normal fly-camera controls take priority. Release RMB and press `W`, `E`, or `R` normally to start a modal transform.
+
+If a modal transform has already started, Right Click keeps its existing meaning: cancel the transform and restore the initial state.
 
 Default shortcuts are rebindable under **Edit → Editor Preferences → General → Keyboard Shortcuts**. Search for **3ds Max Editor Controls**.
 
